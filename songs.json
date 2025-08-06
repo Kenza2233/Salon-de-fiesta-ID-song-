@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "total_songs": 124,
+    "total_songs": 144,
     "created_date": "2025-08-06",
     "source": "Music Document Processing",
     "genres": [
@@ -9,12 +9,14 @@
       "Hip Hop",
       "Indonesian Alternative/Indie",
       "K-Pop",
-      "Pop"
+      "Pop",
+      "Anime/Vocaloid",
+      "Videogame"
     ],
     "genre_distribution": {
-      "Electronic/EDM": 48,
-      "Indonesian/Malaysian Pop": 24,
-      "Hip Hop": 4,
+      "Electronic/EDM": 54,
+      "Indonesian/Malaysian Pop": 25,
+      "Hip Hop": 5,
       "Indonesian Alternative/Indie": 8,
       "K-Pop": 10,
       "Pop": 11
@@ -763,6 +765,126 @@
       "id": "133361466559971",
       "artist": "Unknown",
       "title": "DAME UM GRRR Tuhhh biar gak lemes",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "84559038475108",
+      "artist": "DJAlexSombra13",
+      "title": "Otonoke- Creepy Nuts (DandadanOP)",
+      "genre": "Anime/Vocaloid"
+    },
+    {
+      "id": "76652812060696",
+      "artist": "DJCris, InsectoProds, HatsuneMiku, DJAlexSombra",
+      "title": "Reguetton Champagne - Goku, Vegeta y Cell (cover) & Colgando en tus manos - Hatsune Miku & Don ramon (cover)",
+      "genre": "Anime/Vocaloid"
+    },
+    {
+      "id": "92218264963634",
+      "artist": "DJ AlexSombra13",
+      "title": "S3RL - Misleading Title",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "78402962441718",
+      "artist": "DJAlexSombra & DJMae",
+      "title": "Kasane Teto x Hatsune Miku - MESMERIZER & CandyCookieChocolate",
+      "genre": "Anime/Vocaloid"
+    },
+    {
+      "id": "118485678047423",
+      "artist": "DJ AlexSombra13",
+      "title": "Pipocar (feat. Hatsune Miku)",
+      "genre": "Anime/Vocaloid"
+    },
+    {
+      "id": "136438004106149",
+      "artist": "DJ AlexSombra13",
+      "title": "Tetoris - Kasane Teto",
+      "genre": "Anime/Vocaloid"
+    },
+    {
+      "id": "76945341148985",
+      "artist": "Mix Hatsune Miku Vol.7 ft. DJ AlexSombra13",
+      "title": "M@GICAL☆CURE! LOVE SHOT! & Confessions of a Rotten Girl",
+      "genre": "Anime/Vocaloid"
+    },
+    {
+      "id": "94770861694537",
+      "artist": "Mix Hatsune Miku Vol.8 ft. DJ AlexSombra13",
+      "title": "Monitoring (DECO*27 ft. Hatsune Miku) & Romeo and Cinderella (doriko ft. Hatsune Miku)",
+      "genre": "Anime/Vocaloid"
+    },
+    {
+      "id": "109919033851818",
+      "artist": "DJAlexSombra13",
+      "title": "BouncingBurnice - BurningDesires (Zendless Zone Zero OST)",
+      "genre": "Videogame"
+    },
+    {
+      "id": "87356837237026",
+      "artist": "DJ AlexSombra13",
+      "title": "Fist Bump - Sonic Forces OST",
+      "genre": "Videogame"
+    },
+    {
+      "id": "127825817869533",
+      "artist": "DJAlexSombra13",
+      "title": "OpenYourHeart - SonicAdventureOST",
+      "genre": "Videogame"
+    },
+    {
+      "id": "120763924846450",
+      "artist": "DJ AlexSombra13",
+      "title": "I Am... All Of Me - Shadow Theme",
+      "genre": "Videogame"
+    },
+    {
+      "id": "91094435221304",
+      "artist": "DJ AlexSombra13",
+      "title": "His World - Sonic 2006",
+      "genre": "Videogame"
+    },
+    {
+      "id": "99307088577400",
+      "artist": "DJ_Cris & DJ_AlexSombra13",
+      "title": "Undefeatable",
+      "genre": "Videogame"
+    },
+    {
+      "id": "133865450160956",
+      "artist": "Christina Perri (Noka AxL Breakbeat)",
+      "title": "Jar of Hearts",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "70896521228209",
+      "artist": "DJ MEJIKUHIBINIU",
+      "title": "CUMA KAMU TIADA YANG LAIN",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "91962293583021",
+      "artist": "LENN x BULLO",
+      "title": "Bigroom Never Dies x Heads Will Roll",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "114682934452611",
+      "artist": "Unknown",
+      "title": "KELINGAN MANTAN",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "100297475308556",
+      "artist": "DJ",
+      "title": "TABOLA BALE SLOW VIRAL TIKTOK FULL SONG",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "74399547874495",
+      "artist": "DJ",
+      "title": "GENIT X STECU CIHUYY SOUND JJ",
       "genre": "Electronic/EDM"
     }
   ]
