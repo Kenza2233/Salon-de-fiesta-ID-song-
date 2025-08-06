@@ -1,34 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. DATA LAGU (MOCK DATA)
-    const songs = [
-        { id: 'L001', title: 'Aku dan Bintang', artist: 'Peterpan', genre: 'Pop', language: 'Melayu' },
-        { id: 'L002', title: 'Bohemian Rhapsody', artist: 'Queen', genre: 'Rock', language: 'Inggeris' },
-        { id: 'L003', title: 'Cindai', artist: 'Siti Nurhaliza', genre: 'Tradisional', language: 'Melayu' },
-        { id: 'L004', title: 'Dynamite', artist: 'BTS', genre: 'K-Pop', language: 'Korea' },
-        { id: 'L005', title: 'Enter Sandman', artist: 'Metallica', genre: 'Rock', language: 'Inggeris' },
-        { id: 'L006', title: 'Fantasia Bulan Madu', artist: 'Search', genre: 'Rock', language: 'Melayu' },
-        { id: 'L007', title: 'Gangnam Style', artist: 'PSY', genre: 'K-Pop', language: 'Korea' },
-        { id: 'L008', title: 'Hotel California', artist: 'Eagles', genre: 'Rock', language: 'Inggeris' },
-        { id: 'L009', title: 'Isabella', artist: 'Search', genre: 'Rock', language: 'Melayu' },
-        { id: 'L010', title: 'Jerat Percintaan', artist: 'Siti Nurhaliza', genre: 'Pop', language: 'Melayu' },
-        { id: 'L011', title: 'Kau Ilhamku', artist: 'Man Bai', genre: 'Pop', language: 'Melayu' },
-        { id: 'L012', title: 'Like a Rolling Stone', artist: 'Bob Dylan', genre: 'Folk', language: 'Inggeris' },
-        { id: 'L013', title: 'Madu Tiga', artist: 'P. Ramlee', genre: 'Klasik', language: 'Melayu' },
-        { id: 'L014', title: 'Nirmala', artist: 'Siti Nurhaliza', genre: 'Tradisional', language: 'Melayu' },
-        { id: 'L015', title: 'One', artist: 'U2', genre: 'Rock', language: 'Inggeris' },
-        { id: 'L016', title: 'Pelangi Petang', artist: 'Sudirman', genre: 'Pop', language: 'Melayu' },
-        { id: 'L017', title: 'Stairway to Heaven', artist: 'Led Zeppelin', genre: 'Rock', language: 'Inggeris' },
-        { id: 'L018', title: 'Yesterday', artist: 'The Beatles', genre: 'Pop', language: 'Inggeris' }
-    ];
+    // 1. PEMBOLEHUBAH GLOBAL & RUJUKAN DOM
+    let songs = [];
 
-    // 2. RUJUKAN ELEMEN DOM
     const genreFilter = document.getElementById('genre-filter');
     const langFilter = document.getElementById('lang-filter');
     const letterFilterContainer = document.getElementById('letter-filter');
     const resultsContainer = document.getElementById('results');
-
-    let activeLetter = 'all';
+    const splashScreen = document.getElementById('splash-screen');
+    const startBtn = document.getElementById('start-btn');
+    const mainContent = document.getElementById('main-content');
 
     // 3. FUNGSI UNTUK MEMAPARKAN LAGU
     function displaySongs(songList) {
@@ -60,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 4. FUNGSI UNTUK POPULASI PENAPIS
-    function populateFilters() {
-        const genres = [...new Set(songs.map(song => song.genre))];
-        const languages = [...new Set(songs.map(song => song.language))];
+    function populateFilters(songList) {
+        const genres = [...new Set(songList.map(song => song.genre))];
+        const languages = [...new Set(songList.map(song => song.language))];
 
         genres.sort().forEach(genre => {
             const option = document.createElement('option');
@@ -96,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 5. FUNGSI UNTUK MENAPIS DAN MEMAPARKAN
-    function filterAndDisplaySongs() {
+    function filterAndDisplaySongs(activeLetter = 'all') {
         const selectedGenre = genreFilter.value;
         const selectedLang = langFilter.value;
 
@@ -110,26 +91,51 @@ document.addEventListener('DOMContentLoaded', () => {
         displaySongs(filteredSongs);
     }
 
-    // 6. EVENT LISTENERS
-    genreFilter.addEventListener('change', filterAndDisplaySongs);
-    langFilter.addEventListener('change', filterAndDisplaySongs);
-
-    letterFilterContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('letter-button')) {
-            // Urus kelas 'active'
-            letterFilterContainer.querySelector('.active').classList.remove('active');
-            e.target.classList.add('active');
-
-            activeLetter = e.target.dataset.letter;
-            filterAndDisplaySongs();
+    // 6. INISIALISASI APLIKASI
+    async function init() {
+        // Ambil data lagu dari fail JSON
+        try {
+            const response = await fetch('songs.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            songs = await response.json();
+        } catch (error) {
+            console.error("Gagal memuatkan data lagu:", error);
+            resultsContainer.innerHTML = "<p>Maaf, data lagu tidak dapat dimuatkan. Sila cuba lagi kemudian.</p>";
+            return;
         }
-    });
 
-    // 7. INISIALISASI
-    function init() {
-        populateFilters();
+        let activeLetter = 'all';
+
+        // Sediakan penapis dan paparkan semua lagu pada mulanya
+        populateFilters(songs);
         displaySongs(songs);
+
+        // Tambah Event Listeners
+        genreFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
+        langFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
+
+        letterFilterContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('letter-button')) {
+                letterFilterContainer.querySelector('.active').classList.remove('active');
+                e.target.classList.add('active');
+                activeLetter = e.target.dataset.letter;
+                filterAndDisplaySongs(activeLetter);
+            }
+        });
     }
 
-    init();
+    // 7. EVENT LISTENER UNTUK BUTANG MULA
+    startBtn.addEventListener('click', () => {
+        splashScreen.classList.add('fade-out');
+
+        // Selepas animasi selesai, sembunyikan splash screen dan paparkan kandungan utama
+        setTimeout(() => {
+            splashScreen.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            // Inisialisasi aplikasi utama hanya selepas pengguna menekan mula
+            init();
+        }, 800); // Sepadan dengan tempoh transisi CSS
+    });
 });

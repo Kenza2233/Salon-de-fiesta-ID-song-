@@ -10,6 +10,22 @@ Projek ini dibina menggunakan HTML, CSS, dan JavaScript tulen, dan direka bentuk
 - **Animasi Halus:** Menggunakan pustaka Animate On Scroll (AOS) untuk memaparkan hasil carian dengan menarik.
 - **Antara Muka Responsif:** Direka untuk berfungsi pada pelbagai saiz skrin.
 
+## Menguruskan Data Lagu
+
+Untuk menambah, mengubah, atau memadam lagu, anda hanya perlu mengedit fail `songs.json`. Pastikan setiap entri lagu mengekalkan format JSON yang betul seperti di bawah:
+
+```json
+{
+  "id": "L019",
+  "title": "Nama Lagu Baru",
+  "artist": "Nama Artis",
+  "genre": "Genre Muzik",
+  "language": "Bahasa Lagu"
+}
+```
+
+Pastikan tiada koma (`,`) selepas objek terakhir dalam senarai.
+
 ## Pemasangan di Netlify (Cara Mudah)
 
 Laman web ini adalah laman statik, jadi ia sangat mudah untuk dipasang di perkhidmatan hosting seperti Netlify.

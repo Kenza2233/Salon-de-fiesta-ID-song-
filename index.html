@@ -9,9 +9,16 @@
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Pencari ID Lagu</h1>
+    <div id="splash-screen">
+        <h1>Selamat Datang ke Pencari Lagu</h1>
+        <p>Cari lagu kegemaran anda dalam sekelip mata.</p>
+        <button id="start-btn">Mula</button>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <div class="container">
+            <header>
+                <h1>Pencari ID Lagu</h1>
             <p>Tapis lagu mengikut genre, bahasa, dan huruf pertama.</p>
         </header>
 
@@ -44,8 +51,9 @@
             <div id="results" class="song-list"></div>
         </main>
     </div>
+</div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
     <script>
         AOS.init();

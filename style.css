@@ -185,3 +185,60 @@ select:focus {
     background-color: #ffeaf0; /* Pink yang lebih lembut */
     color: #c53962;
 }
+
+/* --- Skrin Permulaan (Splash Screen) --- */
+#splash-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--mint), var(--soft-pink));
+    text-align: center;
+    color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: opacity 0.8s ease-in-out;
+}
+
+#splash-screen h1 {
+    font-size: 3em;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+#splash-screen p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+#start-btn {
+    background-color: var(--white);
+    color: var(--soft-pink);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* --- Kelas Bantuan (Utility Classes) --- */
+.hidden {
+    display: none;
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
