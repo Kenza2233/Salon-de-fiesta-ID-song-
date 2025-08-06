@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displaySongs(songList) {
         resultsContainer.innerHTML = '';
         if (songList.length === 0) {
-            resultsContainer.innerHTML = '<p>Tiada lagu ditemui.</p>';
+            resultsContainer.innerHTML = '<p>No songs found.</p>';
             return;
         }
 
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Cipta butang huruf
         const allButton = document.createElement('button');
         allButton.className = 'letter-button all-letters active';
-        allButton.textContent = 'Semua';
+        allButton.textContent = 'All';
         allButton.dataset.letter = 'all';
         letterFilterContainer.appendChild(allButton);
 
@@ -126,11 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let activeLetter = 'all';
 
-        // Sediakan penapis dan paparkan semua lagu pada mulanya
+        // Sediakan penapis
         populateFilters(songs);
-        displaySongs(songs);
+
+        // Paparkan 5 lagu rawak pada mulanya
+        const shuffledSongs = [...songs].sort(() => 0.5 - Math.random());
+        displaySongs(shuffledSongs.slice(0, 5));
 
         // Tambah Event Listeners
+        // Apabila pengguna menapis, gunakan senarai penuh
         genreFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
         langFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
 

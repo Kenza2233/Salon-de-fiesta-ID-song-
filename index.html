@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carian Lagu</title>
+    <title>Song Finder</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -12,46 +12,46 @@
     <div id="main-content">
         <div class="container">
             <header data-aos="fade-down">
-                <h1>Pencari ID Lagu</h1>
-            <p>Tapis lagu mengikut genre, bahasa, dan huruf pertama.</p>
-        </header>
+                <h1>Song ID Finder</h1>
+                <p>Filter songs by genre, language, and first letter.</p>
+            </header>
 
-        <main>
-            <!-- Borang penapis akan diletakkan di sini -->
-            <div id="filters">
-                <div class="filter-group" data-aos="fade-right">
-                    <label for="genre-filter">Genre:</label>
-                    <select id="genre-filter">
-                        <option value="all">Semua Genre</option>
-                        <!-- Pilihan genre akan ditambah oleh JavaScript -->
-                    </select>
-                </div>
-                <div class="filter-group" data-aos="fade-right" data-aos-delay="100">
-                    <label for="lang-filter">Bahasa:</label>
-                    <select id="lang-filter">
-                        <option value="all">Semua Bahasa</option>
-                        <!-- Pilihan bahasa akan ditambah oleh JavaScript -->
-                    </select>
-                </div>
-                <div class="filter-group letter-filter-group" data-aos="fade-right" data-aos-delay="200">
-                    <label>Huruf Pertama:</label>
-                    <div id="letter-filter" class="letter-buttons">
-                        <!-- Butang huruf akan ditambah oleh JavaScript -->
+            <main>
+                <!-- Filter form will be placed here -->
+                <div id="filters">
+                    <div class="filter-group" data-aos="fade-right">
+                        <label for="genre-filter">Genre:</label>
+                        <select id="genre-filter">
+                            <option value="all">All Genres</option>
+                            <!-- Genre options will be added by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="filter-group" data-aos="fade-right" data-aos-delay="100">
+                        <label for="lang-filter">Language:</label>
+                        <select id="lang-filter">
+                            <option value="all">All Languages</option>
+                            <!-- Language options will be added by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="filter-group letter-filter-group" data-aos="fade-right" data-aos-delay="200">
+                        <label>First Letter:</label>
+                        <div id="letter-filter" class="letter-buttons">
+                            <!-- Letter buttons will be added by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="filter-group" data-aos="fade-right" data-aos-delay="300">
+                        <label>Other Options:</label>
+                        <button id="random-btn" class="random-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418C6.93 6.588 8 7.51 8 9.5c0 .646-.24 1.232-.646 1.688C6.93 11.588 5.76 12.5 4.5 12.5H3.061l.96 1.6H4.5c2.404 0 4.122-1.24 5.126-2.418C10.63 10.412 11 9.5 11 8.5c0-.646.24-1.232.646-1.688C12.63 5.412 13.799 4.5 15 4.5h.5a.5.5 0 0 1 0 1H15c-1.201 0-2.175.648-2.874 1.254C11.596 7.368 11 8.006 11 8.5c0 .646-.24 1.232-.646 1.688C9.76 10.788 8.596 11.5 7.5 11.5h-1l.96-1.6H7.5c1.201 0 2.175-.648 2.874-1.254C10.904 8.132 11 7.494 11 7s.24-1.232.646-1.688C12.24 4.712 13.404 4 14.5 4h.5a.5.5 0 0 1 0-1h-.5c-2.404 0-4.122 1.24-5.126 2.418C8.37 6.588 8 7.51 8 8.5c0 .646.24 1.232.646 1.688C9.24 10.788 10.404 11.5 11.5 11.5h1l-.96 1.6h-1.5c-2.404 0-4.122-1.24-5.126-2.418C4.37 9.588 4 8.51 4 7.5c0-.646.24-1.232.646-1.688C5.24 4.712 6.404 4 7.5 4h1.5l-.96-1.6H7.5C5.096 2.4 3.378 3.64 2.374 4.818A4.99 4.99 0 0 0 1 7.5c0 .646.24 1.232.646 1.688C2.24 10.288 3.404 11 4.5 11h1l-.96 1.6H4.5C2.096 12.6.378 11.36.374 10.182A4.99 4.99 0 0 1 1 7.5c0-1.01.37-1.93.982-2.688C2.6 4.132 3.799 3.5 5 3.5h.5a.5.5 0 0 1 0 1H5c-1.201 0-2.175.648-2.874 1.254C1.596 6.368 1.5 7.006 1.5 7.5c0 .646.24 1.232.646 1.688C2.74 9.788 3.904 10.5 5 10.5h1.5l-.96 1.6H5C2.596 12.1.878 10.86.874 9.682A5.002 5.002 0 0 1 1.5 7.5c0-1.01.37-1.93.982-2.688C3.1 4.132 4.299 3.5 5.5 3.5h.5a.5.5 0 0 1 0-1H5.5C3.096 2.5 1.378 3.74.374 4.918A5.5 5.5 0 0 0 0 7.5a.5.5 0 0 1-1 0c0-1.01.37-1.93.982-2.688C.583 4.132 1.782 3.5 3 3.5h.5a.5.5 0 0 1 .5.5z"/>
+                            </svg>
+                            Random Song
+                        </button>
                     </div>
                 </div>
-                <div class="filter-group" data-aos="fade-right" data-aos-delay="300">
-                    <label>Pilihan Lain:</label>
-                    <button id="random-btn" class="random-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418C6.93 6.588 8 7.51 8 9.5c0 .646-.24 1.232-.646 1.688C6.93 11.588 5.76 12.5 4.5 12.5H3.061l.96 1.6H4.5c2.404 0 4.122-1.24 5.126-2.418C10.63 10.412 11 9.5 11 8.5c0-.646.24-1.232.646-1.688C12.63 5.412 13.799 4.5 15 4.5h.5a.5.5 0 0 1 0 1H15c-1.201 0-2.175.648-2.874 1.254C11.596 7.368 11 8.006 11 8.5c0 .646-.24 1.232-.646 1.688C9.76 10.788 8.596 11.5 7.5 11.5h-1l.96-1.6H7.5c1.201 0 2.175-.648 2.874-1.254C10.904 8.132 11 7.494 11 7s.24-1.232.646-1.688C12.24 4.712 13.404 4 14.5 4h.5a.5.5 0 0 1 0-1h-.5c-2.404 0-4.122 1.24-5.126 2.418C8.37 6.588 8 7.51 8 8.5c0 .646.24 1.232.646 1.688C9.24 10.788 10.404 11.5 11.5 11.5h1l-.96 1.6h-1.5c-2.404 0-4.122-1.24-5.126-2.418C4.37 9.588 4 8.51 4 7.5c0-.646.24-1.232.646-1.688C5.24 4.712 6.404 4 7.5 4h1.5l-.96-1.6H7.5C5.096 2.4 3.378 3.64 2.374 4.818A4.99 4.99 0 0 0 1 7.5c0 .646.24 1.232.646 1.688C2.24 10.288 3.404 11 4.5 11h1l-.96 1.6H4.5C2.096 12.6.378 11.36.374 10.182A4.99 4.99 0 0 1 1 7.5c0-1.01.37-1.93.982-2.688C2.6 4.132 3.799 3.5 5 3.5h.5a.5.5 0 0 1 0 1H5c-1.201 0-2.175.648-2.874 1.254C1.596 6.368 1.5 7.006 1.5 7.5c0 .646.24 1.232.646 1.688C2.74 9.788 3.904 10.5 5 10.5h1.5l-.96 1.6H5C2.596 12.1.878 10.86.874 9.682A5.002 5.002 0 0 1 1.5 7.5c0-1.01.37-1.93.982-2.688C3.1 4.132 4.299 3.5 5.5 3.5h.5a.5.5 0 0 1 0-1H5.5C3.096 2.5 1.378 3.74.374 4.918A5.5 5.5 0 0 0 0 7.5a.5.5 0 0 1-1 0c0-1.01.37-1.93.982-2.688C.583 4.132 1.782 3.5 3 3.5h.5a.5.5 0 0 1 .5.5z"/>
-                        </svg>
-                        Lagu Rawak
-                    </button>
-                </div>
-            </div>
 
-            <!-- Hasil carian akan dipaparkan di sini -->
-            <div id="results" class="song-list"></div>
+                <!-- Search results will be displayed here -->
+                <div id="results" class="song-list"></div>
         </main>
     </div>
 </div>
