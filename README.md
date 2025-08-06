@@ -13,7 +13,16 @@ Projek ini dibina menggunakan HTML, CSS, dan JavaScript tulen, dan direka bentuk
 
 ## Menguruskan Data Lagu
 
-Untuk menambah, mengubah, atau memadam lagu, anda hanya perlu mengedit fail `songs.json`. Pastikan setiap entri lagu mengekalkan format JSON yang betul seperti di bawah:
+Pengurusan lagu melibatkan dua langkah utama: memuat naik fail audio dan mengemas kini fail data `songs.json`.
+
+### Langkah 1: Muat Naik Fail Audio
+
+1.  Di dalam direktori utama projek anda, cipta satu folder baharu dan namakannya `audio`.
+2.  Letakkan semua fail lagu anda (contohnya, dalam format `.mp3`) ke dalam folder `audio` ini.
+
+### Langkah 2: Kemas kini `songs.json`
+
+Buka fail `songs.json` dan edit senarai lagu. Setiap lagu mesti mempunyai format berikut:
 
 ```json
 {
@@ -21,11 +30,13 @@ Untuk menambah, mengubah, atau memadam lagu, anda hanya perlu mengedit fail `son
   "title": "Nama Lagu Baru",
   "artist": "Nama Artis",
   "genre": "Genre Muzik",
-  "language": "Bahasa Lagu"
+  "language": "Bahasa Lagu",
+  "audioSrc": "audio/nama-fail-lagu.mp3"
 }
 ```
 
-Pastikan tiada koma (`,`) selepas objek terakhir dalam senarai.
+-   **Penting:** Pastikan nilai `audioSrc` sepadan dengan nama fail yang anda letakkan di dalam folder `audio`.
+-   Pastikan tiada koma (`,`) selepas objek `{...}` terakhir dalam senarai.
 
 ## Pemasangan di Netlify (Cara Mudah)
 

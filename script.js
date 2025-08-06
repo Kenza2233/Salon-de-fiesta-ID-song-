@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Logik main audio
+        audio.src = song.audioSrc;
+        audio.load();
         audio.play();
         musicPlayer.classList.add('playing');
         playIcon.classList.add('hidden');

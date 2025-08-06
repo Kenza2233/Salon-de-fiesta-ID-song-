@@ -1,9 +1,9 @@
 /* --- Import Font --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700&display=swap');
 
 /* --- Palet Warna & Pembolehubah --- */
 :root {
-    --soft-pink: #FFC0CB;
+    --soft-pink: #fbc2eb; /* Sedikit lebih cerah */
     --mint: #C7FFD8;
     --white: #FFFFFF;
     --text-color: #333;
@@ -13,8 +13,8 @@
 
 /* --- Gaya Asas --- */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa; /* Latar belakang sedikit kelabu */
+    font-family: 'Lora', serif;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     color: var(--text-color);
     margin: 0;
     padding: 20px;
@@ -37,14 +37,16 @@ header {
 }
 
 header h1 {
-    color: var(--text-color);
-    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    color: #2c3e50;
     margin: 0;
 }
 
 header p {
-    color: #666;
-    font-size: 1.1em;
+    color: #34495e;
+    font-size: 1.2em;
+    font-style: italic;
 }
 
 /* --- Bahagian Penapis --- */
@@ -78,7 +80,7 @@ select {
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: var(--white);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lora', serif;
     min-width: 200px;
     cursor: pointer;
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -155,9 +157,10 @@ select:focus {
 }
 
 .song-card h3 {
+    font-family: 'Playfair Display', serif;
     margin: 0 0 10px 0;
-    font-size: 1.4em;
-    color: var(--text-color);
+    font-size: 1.5em;
+    color: #2c3e50;
 }
 
 .song-card .song-id {
