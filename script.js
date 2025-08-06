@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         displaySongs(songs);
 
         // Mulakan animasi menaip
-        typeWriter("SOF ID search", 0, function() {
+        typeWriter("SDF Id Sesrch", 0, function() {
             // Optional: do something after typing is done
         });
 
