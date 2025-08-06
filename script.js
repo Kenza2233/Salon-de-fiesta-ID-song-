@@ -129,12 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Sediakan penapis
         populateFilters(songs);
 
-        // Paparkan 5 lagu rawak pada mulanya
-        const shuffledSongs = [...songs].sort(() => 0.5 - Math.random());
-        displaySongs(shuffledSongs.slice(0, 5));
+        // Paparkan semua lagu pada mulanya
+        displaySongs(songs);
 
         // Tambah Event Listeners
-        // Apabila pengguna menapis, gunakan senarai penuh
         genreFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
         langFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
 

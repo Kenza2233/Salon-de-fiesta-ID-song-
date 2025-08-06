@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "total_songs": 105,
+    "total_songs": 124,
     "created_date": "2025-08-06",
     "source": "Music Document Processing",
     "genres": [
@@ -650,6 +650,120 @@
       "artist": "Zia & Mikky",
       "title": "Aku Dah Lupa",
       "genre": "Pop"
+    },
+    {
+      "id": "82036119238167",
+      "artist": "DJ LILDAVID ft DJ Senz",
+      "title": "TABOLA BALE (SiletOpen Up)",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "112943525190426",
+      "artist": "DJ LILDAVID Ft DJ Senz",
+      "title": "MEJIKUHIBINIU (Tenxi Suisea & Jemsii)",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "129424852636009",
+      "artist": "DJ",
+      "title": "CALON MANTU IDAMAN REMIX VIRAL",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "103421828361374",
+      "artist": "DJ",
+      "title": "MEJIKUHIBINIU REMIX FULLBASS",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "132295619091708",
+      "artist": "ZEIN FVNKY",
+      "title": "DJ RINDU AKU RINDU KAMU JADI SATU",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "122697373012950",
+      "artist": "Tenxi, Suisei, Jemsi",
+      "title": "MEJIKUHIBINIU",
+      "genre": "Pop"
+    },
+    {
+      "id": "100523508106717",
+      "artist": "DJ PARIS",
+      "title": "PEMANDU KARAOKE SEDIH JJ REMIX",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "117442550855972",
+      "artist": "Naykilla",
+      "title": "Kasih Aba Aba",
+      "genre": "Pop"
+    },
+    {
+      "id": "130273412418918",
+      "artist": "Planet Music",
+      "title": "DJ Wemerson",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "98827678478155",
+      "artist": "Adnan Veron x Mister Aloy",
+      "title": "Set Me Free",
+      "genre": "Pop"
+    },
+    {
+      "id": "82073325201690",
+      "artist": "ARGY,OMNYA X BHABI",
+      "title": "ARIA DWP XV ANTHEM",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "99338069014167",
+      "artist": "The Weeknd, Playboi Carti",
+      "title": "Timeless",
+      "genre": "Pop"
+    },
+    {
+      "id": "106196775779661",
+      "artist": "MIX PLAYBOI CARTI Vol.2 ft. Taloo",
+      "title": "RADAR - ft. Metro Boomin, RATHER LIE - ft. The Weeknd, EVIL JORDAN",
+      "genre": "Hip Hop"
+    },
+    {
+      "id": "17854971559",
+      "artist": "DJ ARES",
+      "title": "THE WEEKND - STARBOY",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "16785693818",
+      "artist": "The Weeknd, Madonna, Playboi Carti",
+      "title": "Popular",
+      "genre": "Pop"
+    },
+    {
+      "id": "89633753918618",
+      "artist": "The Weeknd",
+      "title": "Mix Vol.2 - La Luz Del Sol, One Of The Girls, The Hills, I Feel It Coming",
+      "genre": "Pop"
+    },
+    {
+      "id": "111888412231728",
+      "artist": "BLACKPINK",
+      "title": "VG | Jump",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "126628849431036",
+      "artist": "Unknown",
+      "title": "Dangdut Oh Dangdut",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "133361466559971",
+      "artist": "Unknown",
+      "title": "DAME UM GRRR Tuhhh biar gak lemes",
+      "genre": "Electronic/EDM"
     }
   ]
 }
