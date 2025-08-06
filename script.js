@@ -37,12 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>${song.title}</h3>
                 <p>Artist: ${song.artist}</p>
                 <div class="song-meta">
-                    <span class="song-genre">${song.genre}</span>
-                    <span class="song-lang">${song.language}</span>
+                    <span class="song-genre">${song.genre || 'N/A'}</span>
+                    ${song.language ? `<span class="song-lang">${song.language}</span>` : ''}
                 </div>
             `;
-            resultsContainer.appendChild(songC
-ard);
+            resultsContainer.appendChild(songCard);
 
             const copyBtn = songCard.querySelector('.copy-btn');
             copyBtn.addEventListener('click', (e) => {
@@ -68,7 +67,7 @@ ard);
     // 4. FUNGSI UNTUK POPULASI PENAPIS
     function populateFilters(songList) {
         const genres = [...new Set(songList.map(song => song.genre))];
-        const languages = [...new Set(songList.map(song => song.language))];
+        const languages = [...new Set(songList.map(song => song.language).filter(Boolean))]; // Filter out undefined/null
 
         genres.sort().forEach(genre => {
             const option = document.createElement('option');
@@ -109,7 +108,7 @@ ard);
 
         const filteredSongs = songs.filter(song => {
             const genreMatch = selectedGenre === 'all' || song.genre === selectedGenre;
-            const langMatch = selectedLang === 'all' || !song.language || song.language === selectedLang;
+            const langMatch = selectedLang === 'all' || (song.language && song.language === selectedLang);
             const letterMatch = activeLetter === 'all' || song.title.toUpperCase().startsWith(activeLetter);
             const searchMatch = song.title.toLowerCase().includes(searchTerm) || song.artist.toLowerCase().includes(searchTerm);
 
