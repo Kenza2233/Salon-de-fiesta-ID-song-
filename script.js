@@ -10,13 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const randomBtn = document.getElementById('random-btn');
     const searchBox = document.getElementById('search-box');
 
-    // Elemen Muzik Latar
-    const bgMusic = document.getElementById('bg-music');
-    const musicControl = document.getElementById('music-control');
-    const volumeOnIcon = document.getElementById('volume-on-icon');
-    const volumeOffIcon = document.getElementById('volume-off-icon');
-
-
     // 3. FUNGSI UNTUK MEMAPARKAN LAGU
     function displaySongs(songList) {
         resultsContainer.innerHTML = '';
@@ -180,17 +173,6 @@ ard);
 
         randomBtn.addEventListener('click', displayRandomSong);
         searchBox.addEventListener('input', () => filterAndDisplaySongs(activeLetter));
-
-        musicControl.addEventListener('click', () => {
-            bgMusic.muted = !bgMusic.muted;
-            if (bgMusic.muted) {
-                volumeOnIcon.classList.add('hidden');
-                volumeOffIcon.classList.remove('hidden');
-            } else {
-                volumeOnIcon.classList.remove('hidden');
-                volumeOffIcon.classList.add('hidden');
-            }
-        });
     }
 
     init();
