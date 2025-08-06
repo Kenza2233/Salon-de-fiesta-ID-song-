@@ -19,7 +19,6 @@ body {
     margin: 0;
     padding: 20px;
     line-height: 1.6;
-    padding-bottom: 120px; /* Ruang untuk pemain muzik */
 }
 
 .container {
@@ -190,103 +189,6 @@ select:focus {
 .song-card .song-genre {
     background-color: #ffeaf0; /* Pink yang lebih lembut */
     color: #c53962;
-}
-
-/* --- Pemain Muzik --- */
-#music-player {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background-color: var(--white);
-    border-top: 1px solid var(--border-color);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
-}
-
-#music-player.visible {
-    transform: translateY(0);
-}
-
-.player-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.player-info .now-playing {
-    font-size: 0.8em;
-    color: #888;
-}
-
-#player-title {
-    font-weight: 600;
-    font-size: 1.1em;
-}
-
-#player-artist {
-    font-size: 0.9em;
-    color: #666;
-}
-
-.player-controls button {
-    background: transparent;
-    border: 2px solid var(--soft-pink);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: var(--soft-pink);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.player-controls button:hover {
-    background-color: var(--soft-pink);
-    color: var(--white);
-}
-
-.player-controls svg {
-    width: 24px;
-    height: 24px;
-}
-
-#visualizer {
-    display: flex;
-    align-items: flex-end;
-    height: 40px;
-    gap: 4px;
-}
-
-#visualizer .bar {
-    width: 6px;
-    background-color: var(--mint);
-    height: 5%;
-    border-radius: 3px;
-}
-
-#music-player.playing #visualizer .bar {
-    animation-name: bounce;
-    animation-duration: 1.2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-#visualizer .bar:nth-child(2) { animation-delay: 0.2s; }
-#visualizer .bar:nth-child(3) { animation-delay: 0.4s; }
-#visualizer .bar:nth-child(4) { animation-delay: 0.6s; }
-#visualizer .bar:nth-child(5) { animation-delay: 0.8s; }
-
-@keyframes bounce {
-    0%, 100% { height: 5%; }
-    50% { height: 100%; }
 }
 
 .hidden {

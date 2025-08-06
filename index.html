@@ -11,7 +11,7 @@
 
     <div id="main-content">
         <div class="container">
-            <header>
+            <header data-aos="fade-down">
                 <h1>Pencari ID Lagu</h1>
             <p>Tapis lagu mengikut genre, bahasa, dan huruf pertama.</p>
         </header>
@@ -19,21 +19,21 @@
         <main>
             <!-- Borang penapis akan diletakkan di sini -->
             <div id="filters">
-                <div class="filter-group">
+                <div class="filter-group" data-aos="fade-right">
                     <label for="genre-filter">Genre:</label>
                     <select id="genre-filter">
                         <option value="all">Semua Genre</option>
                         <!-- Pilihan genre akan ditambah oleh JavaScript -->
                     </select>
                 </div>
-                <div class="filter-group">
+                <div class="filter-group" data-aos="fade-right" data-aos-delay="100">
                     <label for="lang-filter">Bahasa:</label>
                     <select id="lang-filter">
                         <option value="all">Semua Bahasa</option>
                         <!-- Pilihan bahasa akan ditambah oleh JavaScript -->
                     </select>
                 </div>
-                <div class="filter-group letter-filter-group">
+                <div class="filter-group letter-filter-group" data-aos="fade-right" data-aos-delay="200">
                     <label>Huruf Pertama:</label>
                     <div id="letter-filter" class="letter-buttons">
                         <!-- Butang huruf akan ditambah oleh JavaScript -->
@@ -50,31 +50,10 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 800, // tempoh animasi
+            once: true, // animasi hanya sekali
+        });
     </script>
-
-    <!-- Pemain Muzik -->
-    <div id="music-player" class="hidden">
-        <div class="player-info">
-            <span class="now-playing">Now Playing:</span>
-            <span id="player-title">Pilih sebuah lagu</span>
-            <span id="player-artist"></span>
-        </div>
-        <div class="player-controls">
-            <button id="play-pause-btn">
-                <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-                <svg id="pause-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-            </button>
-        </div>
-        <div id="visualizer">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-    </div>
-    <audio id="audio-source"></audio>
-
 </body>
 </html>

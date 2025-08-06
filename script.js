@@ -8,15 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const letterFilterContainer = document.getElementById('letter-filter');
     const resultsContainer = document.getElementById('results');
 
-    // Elemen Pemain Muzik
-    const musicPlayer = document.getElementById('music-player');
-    const playerTitle = document.getElementById('player-title');
-    const playerArtist = document.getElementById('player-artist');
-    const playPauseBtn = document.getElementById('play-pause-btn');
-    const playIcon = document.getElementById('play-icon');
-    const pauseIcon = document.getElementById('pause-icon');
-    const audio = document.getElementById('audio-source');
-
     // 3. FUNGSI UNTUK MEMAPARKAN LAGU
     function displaySongs(songList) {
         resultsContainer.innerHTML = '';
@@ -41,60 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             resultsContainer.appendChild(songCard);
-
-            songCard.addEventListener('click', () => playSong(song));
         });
 
         // Refresh AOS untuk mengesan elemen baru
-        AOS.refresh();
-    }
-
-    // FUNGSI PEMAIN MUZIK
-    let currentlyPlaying = null;
-
-    function playSong(song) {
-        // Hentikan lagu yang sedang dimainkan (jika ada)
-        if (currentlyPlaying) {
-            const previousCard = document.querySelector(`.song-card[data-id="${currentlyPlaying.id}"]`);
-            if (previousCard) {
-                previousCard.classList.remove('playing');
-            }
-        }
-
-        // Kemas kini pemain
-        musicPlayer.classList.add('visible');
-        playerTitle.textContent = song.title;
-        playerArtist.textContent = `by ${song.artist}`;
-
-        // Tandakan kad lagu semasa sebagai 'playing'
-        const currentCard = document.querySelector(`.song-card[data-id="${song.id}"]`);
-        if (currentCard) {
-            currentCard.classList.add('playing');
-        }
-
-        // Logik main audio
-        audio.src = song.audioSrc;
-        audio.load();
-        audio.play();
-        musicPlayer.classList.add('playing');
-        playIcon.classList.add('hidden');
-        pauseIcon.classList.remove('hidden');
-
-        currentlyPlaying = song;
-    }
-
-    function togglePlayPause() {
-        if (audio.paused) {
-            audio.play();
-            musicPlayer.classList.add('playing');
-            playIcon.classList.add('hidden');
-            pauseIcon.classList.remove('hidden');
-        } else {
-            audio.pause();
-            musicPlayer.classList.remove('playing');
-            playIcon.classList.remove('hidden');
-            pauseIcon.classList.add('hidden');
-        }
+        // Kelewatan kecil diperlukan untuk AOS mengesan elemen baru selepas grid dikemas kini
+        setTimeout(() => {
+            AOS.refresh();
+        }, 100);
     }
 
     // 4. FUNGSI UNTUK POPULASI PENAPIS
@@ -181,8 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 filterAndDisplaySongs(activeLetter);
             }
         });
-
-        playPauseBtn.addEventListener('click', togglePlayPause);
     }
 
     init();

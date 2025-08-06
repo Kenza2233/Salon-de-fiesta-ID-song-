@@ -6,23 +6,13 @@ Projek ini dibina menggunakan HTML, CSS, dan JavaScript tulen, dan direka bentuk
 
 ## Ciri-ciri
 - **Penapisan Pelbagai Kriteria:** Tapis lagu mengikut genre, bahasa, dan abjad.
-- **Pemain Muzik Terbina:** Klik pada lagu untuk "memainkannya" di pemain muzik di bahagian bawah, lengkap dengan butang main/jeda dan visualizer animasi.
-- **Reka Bentuk Menarik:** Menggunakan palet warna Pink Lembut, Mint, dan Putih.
-- **Animasi Halus:** Menggunakan pustaka Animate On Scroll (AOS) untuk memaparkan hasil carian dengan menarik.
+- **Reka Bentuk Menarik:** Menggunakan fon estetik dan palet warna Pink Lembut, Mint, dan Putih.
+- **Animasi Halus:** Menggunakan pustaka Animate On Scroll (AOS) untuk memaparkan tajuk, penapis, dan hasil carian dengan menarik.
 - **Antara Muka Responsif:** Direka untuk berfungsi pada pelbagai saiz skrin.
 
 ## Menguruskan Data Lagu
 
-Pengurusan lagu melibatkan dua langkah utama: memuat naik fail audio dan mengemas kini fail data `songs.json`.
-
-### Langkah 1: Muat Naik Fail Audio
-
-1.  Di dalam direktori utama projek anda, cipta satu folder baharu dan namakannya `audio`.
-2.  Letakkan semua fail lagu anda (contohnya, dalam format `.mp3`) ke dalam folder `audio` ini.
-
-### Langkah 2: Kemas kini `songs.json`
-
-Buka fail `songs.json` dan edit senarai lagu. Setiap lagu mesti mempunyai format berikut:
+Untuk menambah, mengubah, atau memadam lagu, anda hanya perlu mengedit fail `songs.json`. Pastikan setiap entri lagu mengekalkan format JSON yang betul seperti di bawah:
 
 ```json
 {
@@ -30,12 +20,10 @@ Buka fail `songs.json` dan edit senarai lagu. Setiap lagu mesti mempunyai format
   "title": "Nama Lagu Baru",
   "artist": "Nama Artis",
   "genre": "Genre Muzik",
-  "language": "Bahasa Lagu",
-  "audioSrc": "audio/nama-fail-lagu.mp3"
+  "language": "Bahasa Lagu"
 }
 ```
 
--   **Penting:** Pastikan nilai `audioSrc` sepadan dengan nama fail yang anda letakkan di dalam folder `audio`.
 -   Pastikan tiada koma (`,`) selepas objek `{...}` terakhir dalam senarai.
 
 ## Pemasangan di Netlify (Cara Mudah)
