@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const langFilter = document.getElementById('lang-filter');
     const letterFilterContainer = document.getElementById('letter-filter');
     const resultsContainer = document.getElementById('results');
+    const randomBtn = document.getElementById('random-btn');
 
     // 3. FUNGSI UNTUK MEMAPARKAN LAGU
     function displaySongs(songList) {
@@ -92,6 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
         displaySongs(filteredSongs);
     }
 
+    function displayRandomSong() {
+        // Reset all filters to default
+        genreFilter.value = 'all';
+        langFilter.value = 'all';
+        if (letterFilterContainer.querySelector('.active')) {
+            letterFilterContainer.querySelector('.active').classList.remove('active');
+        }
+        letterFilterContainer.querySelector('.all-letters').classList.add('active');
+
+        // Select and display one random song
+        const randomIndex = Math.floor(Math.random() * songs.length);
+        const randomSong = songs[randomIndex];
+        displaySongs([randomSong]);
+    }
+
     // 6. INISIALISASI APLIKASI
     async function init() {
         // Ambil data lagu dari fail JSON
@@ -126,6 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 filterAndDisplaySongs(activeLetter);
             }
         });
+
+        randomBtn.addEventListener('click', displayRandomSong);
     }
 
     init();

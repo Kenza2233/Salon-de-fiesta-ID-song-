@@ -14,7 +14,8 @@
 /* --- Gaya Asas --- */
 body {
     font-family: 'Lora', serif;
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    background-color: #e0eafc;
+    background-image: linear-gradient(to top, #e0eafc 0%, #cfdef3 100%);
     color: var(--text-color);
     margin: 0;
     padding: 20px;
@@ -140,19 +141,18 @@ select:focus {
 }
 
 .song-card {
-    background-color: var(--white);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 4px 12px var(--shadow-color);
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    cursor: pointer;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.song-card:hover, .song-card.playing {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-color: var(--soft-pink);
+.song-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
 }
 
 .song-card h3 {
@@ -193,4 +193,25 @@ select:focus {
 
 .hidden {
     display: none;
+}
+
+/* --- Butang Khas --- */
+.random-button {
+    background-color: var(--soft-pink);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.random-button:hover {
+    background-color: #f8a5e0;
+    transform: scale(1.05);
 }
