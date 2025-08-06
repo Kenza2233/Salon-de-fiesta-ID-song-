@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const randomBtn = document.getElementById('random-btn');
     const searchBox = document.getElementById('search-box');
 
+    // Elemen Muzik Latar
+    const bgMusic = document.getElementById('bg-music');
+    const musicControl = document.getElementById('music-control');
+    const volumeOnIcon = document.getElementById('volume-on-icon');
+    const volumeOffIcon = document.getElementById('volume-off-icon');
+
+
     // 3. FUNGSI UNTUK MEMAPARKAN LAGU
     function displaySongs(songList) {
         resultsContainer.innerHTML = '';
@@ -25,15 +32,37 @@ document.addEventListener('DOMContentLoaded', () => {
             songCard.dataset.id = song.id;
 
             songCard.innerHTML = `
-                <div class="song-id">${song.id}</div>
+                <div class="song-id">
+                    <span>${song.id}</span>
+                    <button class="copy-btn" title="Copy ID">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zM9 2H7v1h2V2z"/>
+                        </svg>
+                    </button>
+                </div>
                 <h3>${song.title}</h3>
-                <p>Artis: ${song.artist}</p>
+                <p>Artist: ${song.artist}</p>
                 <div class="song-meta">
                     <span class="song-genre">${song.genre}</span>
                     <span class="song-lang">${song.language}</span>
                 </div>
             `;
-            resultsContainer.appendChild(songCard);
+            resultsContainer.appendChild(songC
+ard);
+
+            const copyBtn = songCard.querySelector('.copy-btn');
+            copyBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Hentikan event dari merebak ke kad lagu
+                navigator.clipboard.writeText(song.id).then(() => {
+                    copyBtn.title = 'Copied!';
+                    setTimeout(() => {
+                        copyBtn.title = 'Copy ID';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy ID: ', err);
+                });
+            });
         });
 
         // Refresh AOS untuk mengesan elemen baru
@@ -151,6 +180,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         randomBtn.addEventListener('click', displayRandomSong);
         searchBox.addEventListener('input', () => filterAndDisplaySongs(activeLetter));
+
+        musicControl.addEventListener('click', () => {
+            bgMusic.muted = !bgMusic.muted;
+            if (bgMusic.muted) {
+                volumeOnIcon.classList.add('hidden');
+                volumeOffIcon.classList.remove('hidden');
+            } else {
+                volumeOnIcon.classList.remove('hidden');
+                volumeOffIcon.classList.add('hidden');
+            }
+        });
     }
 
     init();
