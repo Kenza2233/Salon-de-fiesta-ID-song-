@@ -162,17 +162,20 @@ select:focus {
     color: #2c3e50;
 }
 
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
 .song-card .song-id {
     background-color: var(--mint);
     color: #2c6b45;
     padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: 600;
-    margin-bottom: 15px;
 }
 
 .song-card .song-meta {
@@ -194,21 +197,16 @@ select:focus {
 }
 
 .copy-btn {
-    background: rgba(255, 255, 255, 0.5);
-    border: none;
+    background: #e9ecef;
+    border: 1px solid #ced4da;
     border-radius: 5px;
     cursor: pointer;
-    padding: 2px 4px;
-    opacity: 0.5;
-    transition: opacity 0.3s;
-}
-
-.song-card:hover .copy-btn {
-    opacity: 1;
+    padding: 4px 6px;
+    transition: background-color 0.3s;
 }
 
 .copy-btn:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: #dee2e6;
 }
 
 .hidden {
