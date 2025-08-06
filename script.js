@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const letterFilterContainer = document.getElementById('letter-filter');
     const resultsContainer = document.getElementById('results');
     const randomBtn = document.getElementById('random-btn');
+    const searchBox = document.getElementById('search-box');
 
     // 3. FUNGSI UNTUK MEMAPARKAN LAGU
     function displaySongs(songList) {
@@ -82,12 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterAndDisplaySongs(activeLetter = 'all') {
         const selectedGenre = genreFilter.value;
         const selectedLang = langFilter.value;
+        const searchTerm = searchBox.value.toLowerCase();
 
         const filteredSongs = songs.filter(song => {
             const genreMatch = selectedGenre === 'all' || song.genre === selectedGenre;
-            const langMatch = selectedLang === 'all' || song.language === selectedLang;
+            const langMatch = selectedLang === 'all' || !song.language || song.language === selectedLang;
             const letterMatch = activeLetter === 'all' || song.title.toUpperCase().startsWith(activeLetter);
-            return genreMatch && langMatch && letterMatch;
+            const searchMatch = song.title.toLowerCase().includes(searchTerm) || song.artist.toLowerCase().includes(searchTerm);
+
+            return genreMatch && langMatch && letterMatch && searchMatch;
         });
 
         displaySongs(filteredSongs);
@@ -146,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         randomBtn.addEventListener('click', displayRandomSong);
+        searchBox.addEventListener('input', () => filterAndDisplaySongs(activeLetter));
     }
 
     init();
