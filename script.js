@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let songs = [];
 
     const genreFilter = document.getElementById('genre-filter');
-    const langFilter = document.getElementById('lang-filter');
     const letterFilterContainer = document.getElementById('letter-filter');
     const resultsContainer = document.getElementById('results');
     const randomBtn = document.getElementById('random-btn');
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>Artist: ${song.artist}</p>
                 <div class="song-meta">
                     <span class="song-genre">${song.genre || 'N/A'}</span>
-                    ${song.language ? `<span class="song-lang">${song.language}</span>` : ''}
                 </div>
             `;
             resultsContainer.appendChild(songCard);
@@ -67,20 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. FUNGSI UNTUK POPULASI PENAPIS
     function populateFilters(songList) {
         const genres = [...new Set(songList.map(song => song.genre))];
-        const languages = [...new Set(songList.map(song => song.language).filter(Boolean))]; // Filter out undefined/null
 
         genres.sort().forEach(genre => {
             const option = document.createElement('option');
             option.value = genre;
             option.textContent = genre;
             genreFilter.appendChild(option);
-        });
-
-        languages.sort().forEach(lang => {
-            const option = document.createElement('option');
-            option.value = lang;
-            option.textContent = lang;
-            langFilter.appendChild(option);
         });
 
         // Cipta butang huruf
@@ -103,25 +93,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. FUNGSI UNTUK MENAPIS DAN MEMAPARKAN
     function filterAndDisplaySongs(activeLetter = 'all') {
         const selectedGenre = genreFilter.value;
-        const selectedLang = langFilter.value;
         const searchTerm = searchBox.value.toLowerCase();
 
         const filteredSongs = songs.filter(song => {
             const genreMatch = selectedGenre === 'all' || song.genre === selectedGenre;
-            const langMatch = selectedLang === 'all' || (song.language && song.language === selectedLang);
             const letterMatch = activeLetter === 'all' || song.title.toUpperCase().startsWith(activeLetter);
             const searchMatch = song.title.toLowerCase().includes(searchTerm) || song.artist.toLowerCase().includes(searchTerm);
 
-            return genreMatch && langMatch && letterMatch && searchMatch;
+            return genreMatch && letterMatch && searchMatch;
         });
 
         displaySongs(filteredSongs);
     }
 
+    // Fungsi untuk animasi menaip
+    function typeWriter(text, i, fnCallback) {
+        if (i < (text.length)) {
+            document.getElementById("typing-title").innerHTML = text.substring(0, i+1);
+            setTimeout(function() {
+                typeWriter(text, i + 1, fnCallback)
+            }, 100);
+        } else if (typeof fnCallback == 'function') {
+            setTimeout(fnCallback, 700);
+        }
+    }
+
     function displayRandomSong() {
         // Reset all filters to default
         genreFilter.value = 'all';
-        langFilter.value = 'all';
         if (letterFilterContainer.querySelector('.active')) {
             letterFilterContainer.querySelector('.active').classList.remove('active');
         }
@@ -157,9 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Paparkan semua lagu pada mulanya
         displaySongs(songs);
 
+        // Mulakan animasi menaip
+        typeWriter("SOF ID search", 0, function() {
+            // Optional: do something after typing is done
+        });
+
         // Tambah Event Listeners
         genreFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
-        langFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
 
         letterFilterContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('letter-button')) {
