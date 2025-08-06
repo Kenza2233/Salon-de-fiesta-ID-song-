@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carian Lagu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Pencari ID Lagu</h1>
+            <p>Tapis lagu mengikut genre, bahasa, dan huruf pertama.</p>
+        </header>
+
+        <main>
+            <!-- Borang penapis akan diletakkan di sini -->
+            <div id="filters">
+                <div class="filter-group">
+                    <label for="genre-filter">Genre:</label>
+                    <select id="genre-filter">
+                        <option value="all">Semua Genre</option>
+                        <!-- Pilihan genre akan ditambah oleh JavaScript -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="lang-filter">Bahasa:</label>
+                    <select id="lang-filter">
+                        <option value="all">Semua Bahasa</option>
+                        <!-- Pilihan bahasa akan ditambah oleh JavaScript -->
+                    </select>
+                </div>
+                <div class="filter-group letter-filter-group">
+                    <label>Huruf Pertama:</label>
+                    <div id="letter-filter" class="letter-buttons">
+                        <!-- Butang huruf akan ditambah oleh JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hasil carian akan dipaparkan di sini -->
+            <div id="results" class="song-list"></div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

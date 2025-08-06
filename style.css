@@ -1,0 +1,187 @@
+/* --- Import Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* --- Palet Warna & Pembolehubah --- */
+:root {
+    --soft-pink: #FFC0CB;
+    --mint: #C7FFD8;
+    --white: #FFFFFF;
+    --text-color: #333;
+    --border-color: #eee;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Gaya Asas --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Tajuk (Header) --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--mint);
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: var(--text-color);
+    font-weight: 600;
+    margin: 0;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* --- Bahagian Penapis --- */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border-color);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #555;
+}
+
+select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    min-width: 200px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:hover {
+    border-color: var(--soft-pink);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--soft-pink);
+    box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.4);
+}
+
+/* --- Penapis Huruf --- */
+.letter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 600px;
+    justify-content: center;
+}
+
+.letter-button {
+    background-color: var(--white);
+    color: var(--soft-pink);
+    border: 1px solid var(--soft-pink);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.letter-button:hover, .letter-button.active {
+    background-color: var(--soft-pink);
+    color: var(--white);
+}
+
+.letter-button.all-letters {
+    background-color: var(--mint);
+    border-color: var(--mint);
+    color: var(--text-color);
+}
+
+.letter-button.all-letters:hover, .letter-button.all-letters.active {
+    background-color: #abe8c0;
+    color: var(--text-color);
+}
+
+
+/* --- Senarai Lagu --- */
+.song-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.song-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.song-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    color: var(--text-color);
+}
+
+.song-card .song-id {
+    background-color: var(--mint);
+    color: #2c6b45;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.song-card .song-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.song-card .song-genre, .song-card .song-lang {
+    background-color: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 15px;
+}
+
+.song-card .song-genre {
+    background-color: #ffeaf0; /* Pink yang lebih lembut */
+    color: #c53962;
+}
