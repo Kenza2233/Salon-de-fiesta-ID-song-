@@ -9,13 +9,7 @@
 </head>
 <body>
 
-    <div id="splash-screen">
-        <h1>Selamat Datang ke Pencari Lagu</h1>
-        <p>Cari lagu kegemaran anda dalam sekelip mata.</p>
-        <button id="start-btn">Mula</button>
-    </div>
-
-    <div id="main-content" class="hidden">
+    <div id="main-content">
         <div class="container">
             <header>
                 <h1>Pencari ID Lagu</h1>
@@ -58,5 +52,29 @@
     <script>
         AOS.init();
     </script>
+
+    <!-- Pemain Muzik -->
+    <div id="music-player" class="hidden">
+        <div class="player-info">
+            <span class="now-playing">Now Playing:</span>
+            <span id="player-title">Pilih sebuah lagu</span>
+            <span id="player-artist"></span>
+        </div>
+        <div class="player-controls">
+            <button id="play-pause-btn">
+                <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                <svg id="pause-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+        </div>
+        <div id="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+    <audio id="audio-source"></audio>
+
 </body>
 </html>

@@ -14,11 +14,12 @@
 /* --- Gaya Asas --- */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--white);
+    background-color: #f8f9fa; /* Latar belakang sedikit kelabu */
     color: var(--text-color);
     margin: 0;
     padding: 20px;
     line-height: 1.6;
+    padding-bottom: 120px; /* Ruang untuk pemain muzik */
 }
 
 .container {
@@ -143,12 +144,14 @@ select:focus {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 12px var(--shadow-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    cursor: pointer;
 }
 
-.song-card:hover {
+.song-card:hover, .song-card.playing {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px var(--shadow-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: var(--soft-pink);
 }
 
 .song-card h3 {
@@ -186,59 +189,103 @@ select:focus {
     color: #c53962;
 }
 
-/* --- Skrin Permulaan (Splash Screen) --- */
-#splash-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, var(--mint), var(--soft-pink));
-    text-align: center;
-    color: var(--white);
+/* --- Pemain Muzik --- */
+#music-player {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
-    transition: opacity 0.8s ease-in-out;
-}
-
-#splash-screen h1 {
-    font-size: 3em;
-    font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-#splash-screen p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-#start-btn {
+    height: 90px;
     background-color: var(--white);
-    color: var(--soft-pink);
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.2em;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+#music-player.visible {
+    transform: translateY(0);
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-info .now-playing {
+    font-size: 0.8em;
+    color: #888;
+}
+
+#player-title {
     font-weight: 600;
-    border-radius: 50px;
+    font-size: 1.1em;
+}
+
+#player-artist {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.player-controls button {
+    background: transparent;
+    border: 2px solid var(--soft-pink);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    color: var(--soft-pink);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#start-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+.player-controls button:hover {
+    background-color: var(--soft-pink);
+    color: var(--white);
 }
 
-/* --- Kelas Bantuan (Utility Classes) --- */
+.player-controls svg {
+    width: 24px;
+    height: 24px;
+}
+
+#visualizer {
+    display: flex;
+    align-items: flex-end;
+    height: 40px;
+    gap: 4px;
+}
+
+#visualizer .bar {
+    width: 6px;
+    background-color: var(--mint);
+    height: 5%;
+    border-radius: 3px;
+}
+
+#music-player.playing #visualizer .bar {
+    animation-name: bounce;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#visualizer .bar:nth-child(2) { animation-delay: 0.2s; }
+#visualizer .bar:nth-child(3) { animation-delay: 0.4s; }
+#visualizer .bar:nth-child(4) { animation-delay: 0.6s; }
+#visualizer .bar:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes bounce {
+    0%, 100% { height: 5%; }
+    50% { height: 100%; }
+}
+
 .hidden {
     display: none;
-}
-
-.fade-out {
-    opacity: 0;
-    pointer-events: none;
 }

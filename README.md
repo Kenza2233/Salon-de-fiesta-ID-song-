@@ -6,6 +6,7 @@ Projek ini dibina menggunakan HTML, CSS, dan JavaScript tulen, dan direka bentuk
 
 ## Ciri-ciri
 - **Penapisan Pelbagai Kriteria:** Tapis lagu mengikut genre, bahasa, dan abjad.
+- **Pemain Muzik Terbina:** Klik pada lagu untuk "memainkannya" di pemain muzik di bahagian bawah, lengkap dengan butang main/jeda dan visualizer animasi.
 - **Reka Bentuk Menarik:** Menggunakan palet warna Pink Lembut, Mint, dan Putih.
 - **Animasi Halus:** Menggunakan pustaka Animate On Scroll (AOS) untuk memaparkan hasil carian dengan menarik.
 - **Antara Muka Responsif:** Direka untuk berfungsi pada pelbagai saiz skrin.
