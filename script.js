@@ -100,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            songs = await response.json();
+            const data = await response.json();
+            songs = data.songs;
         } catch (error) {
             console.error("Gagal memuatkan data lagu:", error);
             resultsContainer.innerHTML = "<p>Maaf, data lagu tidak dapat dimuatkan. Sila cuba lagi kemudian.</p>";
