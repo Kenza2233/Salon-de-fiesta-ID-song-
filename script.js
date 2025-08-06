@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. FUNGSI UNTUK POPULASI PENAPIS
     function populateFilters(songList) {
-        const genres = [...new Set(songList.map(song => song.genre))];
+        const genres = [...new Set(songList.map(song => song.genre).filter(Boolean))];
 
         genres.sort().forEach(genre => {
             const option = document.createElement('option');
