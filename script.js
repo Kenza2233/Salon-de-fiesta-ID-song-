@@ -121,15 +121,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayRandomSong() {
         // Reset all filters to default
         genreFilter.value = 'all';
+        searchBox.value = '';
         if (letterFilterContainer.querySelector('.active')) {
             letterFilterContainer.querySelector('.active').classList.remove('active');
         }
         letterFilterContainer.querySelector('.all-letters').classList.add('active');
 
-        // Select and display one random song
-        const randomIndex = Math.floor(Math.random() * songs.length);
-        const randomSong = songs[randomIndex];
-        displaySongs([randomSong]);
+        // Select and display 1 to 4 random songs
+        const shuffled = [...songs].sort(() => 0.5 - Math.random());
+        const count = Math.floor(Math.random() * 4) + 1; // Random number between 1 and 4
+        const randomSongs = shuffled.slice(0, count);
+        displaySongs(randomSongs);
     }
 
     // 6. INISIALISASI APLIKASI
