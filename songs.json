@@ -1,0 +1,655 @@
+{
+  "metadata": {
+    "total_songs": 105,
+    "created_date": "2025-08-06",
+    "source": "Music Document Processing",
+    "genres": [
+      "Electronic/EDM",
+      "Indonesian/Malaysian Pop",
+      "Hip Hop",
+      "Indonesian Alternative/Indie",
+      "K-Pop",
+      "Pop"
+    ],
+    "genre_distribution": {
+      "Electronic/EDM": 48,
+      "Indonesian/Malaysian Pop": 24,
+      "Hip Hop": 4,
+      "Indonesian Alternative/Indie": 8,
+      "K-Pop": 10,
+      "Pop": 11
+    }
+  },
+  "songs": [
+    {
+      "id": "119920743741816",
+      "artist": "Adikara",
+      "title": "Primadona",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "101951670476487",
+      "artist": "Adnan Gufrona, MW",
+      "title": "Poppin in the Club",
+      "genre": "Pop"
+    },
+    {
+      "id": "107803300608766",
+      "artist": "Adnan Veron, Liquid Silva",
+      "title": "Lowkey",
+      "genre": "Pop"
+    },
+    {
+      "id": "71839954493231",
+      "artist": "ALEXA, AKEEY Edit",
+      "title": "Bang Bang Bang",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "71943575384368",
+      "artist": "Andre Xola",
+      "title": "Nyada Basara",
+      "genre": "Pop"
+    },
+    {
+      "id": "125834628128144",
+      "artist": "Angelbert Rap",
+      "title": "Kutukan Mantan",
+      "genre": "Hip Hop"
+    },
+    {
+      "id": "90836648234996",
+      "artist": "Angga Dermawan",
+      "title": "Faja Skali",
+      "genre": "Pop"
+    },
+    {
+      "id": "85517520389065",
+      "artist": "Ayda Jebat",
+      "title": "Pencuri Hati",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "123435251123499",
+      "artist": "Barakatak",
+      "title": "Musiknya Asyik",
+      "genre": "Hip Hop"
+    },
+    {
+      "id": "125546473583504",
+      "artist": "Chrisye",
+      "title": "Anak Sekolah",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "82122839350805",
+      "artist": "Chrisye",
+      "title": "Hip Hip Hura",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "135976025766672",
+      "artist": "Chrisye",
+      "title": "Juwita",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "90885808605137",
+      "artist": "Chrisye",
+      "title": "Kala Cinta Menggoda",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "107264779195291",
+      "artist": "Chrisye",
+      "title": "Kehidupanku",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "104739974505532",
+      "artist": "Diskoria",
+      "title": "Balada Insan Muda",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "83085827616255",
+      "artist": "Diskoria",
+      "title": "C.H.R.I.S.Y.E",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "81744682799320",
+      "artist": "Diskoria",
+      "title": "Djarkata",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "120301001478518",
+      "artist": "Diskoria",
+      "title": "Serenata Jiwa Lara",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "77058077644066",
+      "artist": "Dola",
+      "title": "Angga Dermawan",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "71926028624016",
+      "artist": "Don Miguel",
+      "title": "Y Que Fuel?",
+      "genre": "Pop"
+    },
+    {
+      "id": "117241948764321",
+      "artist": "DJ DORI",
+      "title": "Karol G – Contigo",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "75111760475574",
+      "artist": "DJ DORI",
+      "title": "The Last Time",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "100637177255735",
+      "artist": "DJ DORI",
+      "title": "+57",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "119858652766953",
+      "artist": "DJ DORI",
+      "title": "Feid, Young Miko – Classy 101",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "71901112610985",
+      "artist": "DJ DORI",
+      "title": "Feid – Normal",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "106673258461677",
+      "artist": "DJ DORI",
+      "title": "I See Red",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "126068011803423",
+      "artist": "DJ DORI",
+      "title": "El Aguacate Es Potasio",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "82093663227338",
+      "artist": "DJ DORI",
+      "title": "Bon Jovi – You Give Love a Bad Name",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "71355575955989",
+      "artist": "DJ DORI",
+      "title": "Never Say Goodbye",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "127110994889672",
+      "artist": "DJ DORI",
+      "title": "Mix Phonk Vol. 3",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "126047191833409",
+      "artist": "DJ DORI",
+      "title": "Tengo 3 Viejas – Los Tucanes de Tijuana",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "73702888078523",
+      "artist": "DJ DORI",
+      "title": "Me Gusta Vivir de Noche – Los Tucanes",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "113401795024850",
+      "artist": "DJ DORI",
+      "title": "Potaxie  #2",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "136759500485082",
+      "artist": "DJ DORI",
+      "title": "The Pina Colada Song (Remix)",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "83855013793314",
+      "artist": "DJ DORI",
+      "title": "Bee Gees – Stayin' Alive (Delabella Remix)",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "107983884648925",
+      "artist": "DJ DORI",
+      "title": "Avicii Tribute Megamashup",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "98731020072926",
+      "artist": "DJ DORI",
+      "title": "Ethereal",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "83515216568084",
+      "artist": "DJ DORI",
+      "title": "Indila – Love Story",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "128726501341958",
+      "artist": "DJ DORI",
+      "title": "I Wanna Be Yours (Dramatic Violin Version)",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "78180332541092",
+      "artist": "DJ DORI",
+      "title": "Wham! – Last Christmas",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "122997790990904",
+      "artist": "DJ DORI",
+      "title": "Jonas Brothers – Like It's Christmas",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "106022228159128",
+      "artist": "DJ DORI",
+      "title": "Mayonesa",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "129816975308658",
+      "artist": "DJ DORI",
+      "title": "A Q Sabes – Lenin Ramirez y Tito Double P",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "97965761217888",
+      "artist": "DJ DORI",
+      "title": "Mi Kryptonita – Doble ONE",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "103665610189729",
+      "artist": "DJ DORI",
+      "title": "El Baile del",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "71437715952678",
+      "artist": "DJ DORI",
+      "title": "Irene Cara – What a Feeling (Flashdance)",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "125066966413672",
+      "artist": "DJ DORI",
+      "title": "DJ Kuri – Mueve la Pompa",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "108481345509341",
+      "artist": "DJ DORI",
+      "title": "Ay Mama – CHAYANNE",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "85122685613817",
+      "artist": "DJ DORI",
+      "title": "Simbolo – 1,2,3",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "80216928289700",
+      "artist": "DJ DORI",
+      "title": "Simbolo – Levantando Las Manos",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "128120834755334",
+      "artist": "DJ DORI",
+      "title": "El Sandwich – Banda Fresa",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "113989106805417",
+      "artist": "Erga",
+      "title": "Naughty Girl",
+      "genre": "Pop"
+    },
+    {
+      "id": "132813255829227",
+      "artist": "Faris Adam",
+      "title": "STECU STECU",
+      "genre": "Pop"
+    },
+    {
+      "id": "135770386718728",
+      "artist": ".Feast",
+      "title": "Berita Kehilangan",
+      "genre": "Indonesian Alternative/Indie"
+    },
+    {
+      "id": "129601645908557",
+      "artist": ".Feast",
+      "title": "Peradaban",
+      "genre": "Indonesian Alternative/Indie"
+    },
+    {
+      "id": "102941539258836",
+      "artist": ".Feast",
+      "title": "Sectumsempra",
+      "genre": "Indonesian Alternative/Indie"
+    },
+    {
+      "id": "135654588044967",
+      "artist": "Groove Bandit",
+      "title": "Gelora Asmara",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "110079871757009",
+      "artist": "Hindia",
+      "title": "Evaluasi",
+      "genre": "Indonesian Alternative/Indie"
+    },
+    {
+      "id": "101283526428878",
+      "artist": "Hindia",
+      "title": "Secukupnya",
+      "genre": "Indonesian Alternative/Indie"
+    },
+    {
+      "id": "117273469362666",
+      "artist": "Hivi!",
+      "title": "Remaja",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "134464498985272",
+      "artist": "JKT48",
+      "title": "Fortune Cookie Yang Mencinta",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "95316138854917",
+      "artist": "JKT48",
+      "title": "Rapsodi",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "129989800222770",
+      "artist": "JKT48",
+      "title": "Heavy Rotation",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "118187353665557",
+      "artist": "JKT48",
+      "title": "Fortune Cookie",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "72146537368392",
+      "artist": "Jogja",
+      "title": "Cintamu Sepahit Topi Miring",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "86206982720827",
+      "artist": "Jogja Hip Hop Found.",
+      "title": "Cintamu Sepahit Topi Miring",
+      "genre": "Hip Hop"
+    },
+    {
+      "id": "107369524743355",
+      "artist": "Juan Reza",
+      "title": "Pica Pica",
+      "genre": "Pop"
+    },
+    {
+      "id": "111615610018255",
+      "artist": "Kaka Azraff",
+      "title": "Bukan Hal Aku",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "17434413216",
+      "artist": "MIX KPOP 1",
+      "title": "NEWJEANS",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "17434256839",
+      "artist": "MIX KPOP 2",
+      "title": "STRAY KIDS",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "17484611857",
+      "artist": "MIX KPOP 3",
+      "title": "BIGBANG",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "17484604103",
+      "artist": "MIX KPOP 4",
+      "title": "ENHYPEN",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "17744078151",
+      "artist": "MIX KPOP 5",
+      "title": "(G)I-DLE",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "17744092671",
+      "artist": "MIX KPOP 6",
+      "title": "GIRLS' GENERATION",
+      "genre": "K-Pop"
+    },
+    {
+      "id": "73649034896086",
+      "artist": "Maliq & D'Essentials",
+      "title": "Pilihanku",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "74904566875573",
+      "artist": "Maliq & D'Essentials",
+      "title": "Senja Teduh Pelita",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "125975258467716",
+      "artist": "Maliq & D'Essentials",
+      "title": "Setapak Sriwedari",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "136488279748399",
+      "artist": "Maman Ten",
+      "title": "Terek Bale",
+      "genre": "Pop"
+    },
+    {
+      "id": "108895889801694",
+      "artist": "Masdo",
+      "title": "Dinda",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "90064155770505",
+      "artist": "Naif",
+      "title": "Benci Untuk Mencinta",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "136194389346988",
+      "artist": "Noh Salleh",
+      "title": "Bunga Di Telinga",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "110959776819671",
+      "artist": "RAN",
+      "title": "Kulakukan Semua Untukmu",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "119893907094757",
+      "artist": "Reality Club",
+      "title": "Am I Bothering You",
+      "genre": "Indonesian Alternative/Indie"
+    },
+    {
+      "id": "109221782063465",
+      "artist": "Reality Club",
+      "title": "Elastic Heart",
+      "genre": "Indonesian Alternative/Indie"
+    },
+    {
+      "id": "125828961713979",
+      "artist": "Reality Club",
+      "title": "Is It The Answer",
+      "genre": "Indonesian Alternative/Indie"
+    },
+    {
+      "id": "127884636280611",
+      "artist": "Reza Artamevia",
+      "title": "Berharap Tak Berpisah",
+      "genre": "Hip Hop"
+    },
+    {
+      "id": "130961540781754",
+      "artist": "DJ Roni Joni",
+      "title": "Pachanga",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "92912321778493",
+      "artist": "Sah",
+      "title": "Sarah & Alfi",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "87618578608076",
+      "artist": "Saixse",
+      "title": "Malampagi",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "137447205585338",
+      "artist": "DJ Sidrap in the Sky",
+      "title": "Aksydjibran",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "120832644055578",
+      "artist": "Sleeq",
+      "title": "Untuk Dia",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "125861394295237",
+      "artist": "DJ Stecu",
+      "title": "PICA PICA PLAT",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "87113169603875",
+      "artist": "Texni, Naykilla, Jemsii",
+      "title": "Garam Madu",
+      "genre": "Pop"
+    },
+    {
+      "id": "17432012046",
+      "artist": "Various Artists",
+      "title": "DJ Millenium X Jagi | YOUR MIX 2 | prod. Katty",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "93479531328112",
+      "artist": "Various Artists",
+      "title": "An Angel's Love (Breakbeat Mix)",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "129877946742650",
+      "artist": "Various Artists",
+      "title": "VOIS SUR TON CHEMIN (Whisnu Santika Edit)",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "133470303020156",
+      "artist": "Various Artists",
+      "title": "DJ КАМИН EMIN JONY Breakbeat Remix Full Bass",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "132942878746467",
+      "artist": "Various Artists",
+      "title": "DJ BABY DON'T GO Sound Reza Arap Breakbeat Remix",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "17432012046",
+      "artist": "Various Artists",
+      "title": "DJ Millenium X Jagi | YOUR MIX 2 | prod. Katty",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "83152842223144",
+      "artist": "Vita Alvia",
+      "title": "Goyang Dayung",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "90012878595829",
+      "artist": "Wali",
+      "title": "Yank",
+      "genre": "Indonesian/Malaysian Pop"
+    },
+    {
+      "id": "111734261272299",
+      "artist": "Whisnu Santika",
+      "title": "Mambo Jambo",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "107859195804313",
+      "artist": "Whisnu Santika X Volt",
+      "title": "Sahara",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "89690294354994",
+      "artist": "Whisnu Santika, hrbp, Keebo",
+      "title": "Cartel",
+      "genre": "Electronic/EDM"
+    },
+    {
+      "id": "80082847002636",
+      "artist": "Zia & Mikky",
+      "title": "Aku Dah Lupa",
+      "genre": "Pop"
+    }
+  ]
+}
