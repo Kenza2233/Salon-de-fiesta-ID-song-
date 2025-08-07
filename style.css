@@ -223,12 +223,13 @@ select:focus {
 }
 
 .song-card .song-id {
-    background-color: var(--secondary);
+    background-color: var(--white);
     color: var(--text-color);
     padding: 5px 12px;
-    border-radius: 20px;
+    border-radius: 8px;
     font-size: 0.9em;
     font-weight: 600;
+    border: 1px solid #ccc;
 }
 
 .song-card .song-meta {

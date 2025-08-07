@@ -173,7 +173,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         // Tambah Event Listeners
-        genreFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
+        genreFilter.addEventListener('change', () => {
+            // Reset letter filter when genre changes
+            if (letterFilterContainer.querySelector('.active')) {
+                letterFilterContainer.querySelector('.active').classList.remove('active');
+            }
+            letterFilterContainer.querySelector('.all-letters').classList.add('active');
+            activeLetter = 'all';
+            filterAndDisplaySongs(activeLetter);
+        });
 
         letterFilterContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('letter-button')) {
