@@ -2,22 +2,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700&display=swap');
 
 /* --- Palet Warna & Pembolehubah --- */
-:root {
-    --lavender: #E6E6FA;
-    --mint: #D1E7DD;
-    --white: #FFFFFF;
+:root, [data-theme="original"] {
+    --primary: #E6E6FA; /* Lavender */
+    --secondary: #D1E7DD; /* Mint */
+    --accent: #8a2be2; /* Darker Lavender */
+    --background: linear-gradient(to top, var(--primary) 0%, var(--secondary) 100%);
     --text-color: #343a40;
-    --border-color: #dee2e6;
-    --shadow-color: rgba(0, 0, 0, 0.05);
+    --header-text: #2c3e50;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(31, 38, 135, 0.15);
+}
+
+[data-theme="cute"] {
+    --primary: #FFD6E8;   /* Pink Pastel */
+    --secondary: #D3FBD8;   /* Mint Pastel */
+    --accent: #E6DAF8;   /* Lavender */
+    --background: linear-gradient(to top, #FFD6E8 0%, #E6DAF8 100%);
+    --text-color: #5d5d5d;
+    --header-text: #c75d8e;
+    --card-bg: rgba(253, 253, 253, 0.8);
+    --card-border: rgba(255, 224, 178, 0.5);
+    --card-shadow: rgba(255, 224, 178, 0.2);
+}
+
+[data-theme="soft"] {
+    --primary: #C0E8F9;   /* Sky Blue */
+    --secondary: #FFF2E2; /* Beige Cream */
+    --accent: #FFC1CC;   /* Pink Lembut */
+    --background: linear-gradient(to top, #C0E8F9 0%, #FFF2E2 100%);
+    --text-color: #6c757d;
+    --header-text: #0077b6;
+    --card-bg: rgba(250, 250, 250, 0.9);
+    --card-border: rgba(255, 193, 204, 0.5);
+    --card-shadow: rgba(192, 232, 249, 0.25);
 }
 
 /* --- Gaya Asas --- */
 body {
     font-family: 'Lora', serif;
-    background-color: var(--lavender);
-    background-image:
-        linear-gradient(to top, var(--lavender) 0%, var(--mint) 100%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9H1v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9H1v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9H1v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9H1v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0h1v5h5V0h1v5h5V0h1v5h5V0h1v5h5V0h1v5h5V0h1v5h5V0h1v5h4v1h-4v5h4v1h-4v5h4v1h-4v5h4v1h-4v5h4v1h-4v5h4v1h-4v5h4v1h-4v5h4v1h-4v4h-1v-4h-5v4h-1v-4h-5v4h-1v-4h-5v4h-1v-4h-5v4h-1v-4h-5v4h-1v-4h-5v4h-1v-4h-5v4H0v-1h5v-5H0v-1h5v-5H0v-1h5v-5H0v-1h5v-5H0v-1h5v-5H0v-1h5v-5H0v-1h5V6h1V0h1v6h1V0h1v6h1V0h1v6h1V0h1v6h1V0h1v6h1V0h1v6h1V0h1v6h5v1h-5v5h5v1h-5v5h5v1h-5v5h5v1h-5v5h5v1h-5v5h5v1h-5v5h5v1h-5v5h-1v-5h-1v5h-1v-5h-1v5h-1v-5h-1v5h-1v-5h-1v5h-1v-5h-1v5h-1v-5h-1v5h-1v-5H6v-1h5v-5H6v-1h5v-5H6v-1h5v-5H6v-1h5v-5H6v-1h5v-5H6V6h-1V0H0v1h6v5H0v1h6v5H0v1h6v5H0v1h6v5H0v1h6v5H0v1h6v5H0v1h6v5H0v1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-color: var(--primary);
+    background-image: var(--background);
     color: var(--text-color);
     margin: 0;
     padding: 20px;
@@ -32,23 +57,24 @@ body {
 
 /* --- Tajuk (Header) --- */
 header {
+    position: relative;
     text-align: center;
     margin-bottom: 40px;
-    border-bottom: 2px solid var(--mint);
+    border-bottom: 2px solid var(--secondary);
     padding-bottom: 20px;
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.5em;
-    color: #2c3e50;
+    color: var(--header-text);
     margin: 0;
     min-height: 1.2em; /* Use min-height to ensure enough space */
 }
 
 .cursor {
     display: inline-block;
-    background-color: #2c3e50;
+    background-color: var(--header-text);
     animation: blink 1s infinite;
 }
 
@@ -70,11 +96,11 @@ header p {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: var(--card-bg);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 40px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--card-border);
 }
 
 .filter-group {
@@ -101,13 +127,13 @@ select {
 }
 
 select:hover {
-    border-color: var(--lavender);
+    border-color: var(--accent);
 }
 
 select:focus {
     outline: none;
-    border-color: var(--lavender);
-    box-shadow: 0 0 0 3px #e6e6fa80;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent)50;
 }
 
 /* --- Penapis Huruf --- */
@@ -121,8 +147,8 @@ select:focus {
 
 .letter-button {
     background-color: var(--white);
-    color: #8a2be2; /* A darker lavender for text */
-    border: 1px solid var(--lavender);
+    color: var(--accent);
+    border: 1px solid var(--primary);
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
@@ -131,13 +157,14 @@ select:focus {
 }
 
 .letter-button:hover, .letter-button.active {
-    background-color: var(--lavender);
+    background-color: var(--primary);
     color: var(--white);
+    border-color: var(--primary);
 }
 
 .letter-button.all-letters {
-    background-color: var(--mint);
-    border-color: var(--mint);
+    background-color: var(--secondary);
+    border-color: var(--secondary);
     color: var(--text-color);
 }
 
@@ -155,25 +182,25 @@ select:focus {
 }
 
 .song-card {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--card-bg);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--card-border);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    box-shadow: 0 8px 32px 0 var(--card-shadow);
     transition: all 0.3s ease;
 }
 
 .song-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+    box-shadow: 0 12px 40px 0 var(--card-shadow);
 }
 
 .song-card h3 {
     font-family: 'Playfair Display', serif;
     margin: 0 0 10px 0;
     font-size: 1.5em;
-    color: #2c3e50;
+    color: var(--header-text);
 }
 
 .card-header {
@@ -184,8 +211,8 @@ select:focus {
 }
 
 .song-card .song-id {
-    background-color: var(--mint);
-    color: #2c6b45;
+    background-color: var(--secondary);
+    color: var(--text-color);
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.9em;
@@ -206,8 +233,8 @@ select:focus {
 }
 
 .song-card .song-genre {
-    background-color: #e0f2f1; /* Light Mint */
-    color: #004d40; /* Dark Mint Text */
+    background-color: var(--primary);
+    color: var(--text-color);
 }
 
 .copy-btn {
@@ -229,9 +256,9 @@ select:focus {
 
 /* --- Butang Khas --- */
 .random-button {
-    background-color: var(--lavender);
-    color: #4a4a4a;
-    border: 1px solid #dcdcdc;
+    background-color: var(--primary);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 10px 15px;
     font-family: 'Lora', serif;
@@ -244,7 +271,7 @@ select:focus {
 }
 
 .random-button:hover {
-    background-color: #dcd0ff;
+    background-color: var(--secondary);
     transform: scale(1.05);
 }
 
@@ -271,4 +298,42 @@ footer {
     margin-top: 40px;
     color: #777;
     font-size: 0.9em;
+}
+
+/* --- Theme Switcher --- */
+.theme-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.theme-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+.theme-btn.active {
+    border-color: var(--header-text);
+}
+
+.theme-btn[data-theme="original"] {
+    background: linear-gradient(to top, #E6E6FA 0%, #D1E7DD 100%);
+}
+
+.theme-btn[data-theme="cute"] {
+    background: linear-gradient(to top, #FFD6E8 0%, #E6DAF8 100%);
+}
+
+.theme-btn[data-theme="soft"] {
+    background: linear-gradient(to top, #C0E8F9 0%, #FFF2E2 100%);
 }

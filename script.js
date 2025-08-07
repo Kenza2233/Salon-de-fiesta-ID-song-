@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsContainer = document.getElementById('results');
     const randomBtn = document.getElementById('random-btn');
     const searchBox = document.getElementById('search-box');
+    const themeSwitcher = document.querySelector('.theme-switcher');
 
     // 3. FUNGSI UNTUK MEMAPARKAN LAGU
     function displaySongs(songList) {
@@ -159,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         displaySongs(songs);
 
         // Mulakan animasi menaip
-        typeWriter("SDF Id Sesrch", 0, function() {
+        typeWriter("SDF Id Search", 0, function() {
             // Optional: do something after typing is done
         });
 
@@ -177,6 +178,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         randomBtn.addEventListener('click', displayRandomSong);
         searchBox.addEventListener('input', () => filterAndDisplaySongs(activeLetter));
+
+        themeSwitcher.addEventListener('click', (e) => {
+            if (e.target.classList.contains('theme-btn')) {
+                const theme = e.target.dataset.theme;
+                document.body.dataset.theme = theme;
+                themeSwitcher.querySelector('.active').classList.remove('active');
+                e.target.classList.add('active');
+            }
+        });
     }
 
     init();
