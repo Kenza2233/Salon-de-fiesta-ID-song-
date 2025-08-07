@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const randomBtn = document.getElementById('random-btn');
     const searchBox = document.getElementById('search-box');
     const themeSwitcher = document.querySelector('.theme-switcher');
+    const toggleThemeBtn = document.getElementById('toggle-theme-btn');
+    const themeOptions = document.querySelector('.theme-options');
 
     // 3. FUNGSI UNTUK MEMAPARKAN LAGU
     function displaySongs(songList) {
@@ -179,12 +181,21 @@ document.addEventListener('DOMContentLoaded', () => {
         randomBtn.addEventListener('click', displayRandomSong);
         searchBox.addEventListener('input', () => filterAndDisplaySongs(activeLetter));
 
-        themeSwitcher.addEventListener('click', (e) => {
+        toggleThemeBtn.addEventListener('click', () => {
+            themeSwitcher.classList.toggle('open');
+        });
+
+        themeOptions.addEventListener('click', (e) => {
             if (e.target.classList.contains('theme-btn')) {
                 const theme = e.target.dataset.theme;
                 document.body.dataset.theme = theme;
-                themeSwitcher.querySelector('.active').classList.remove('active');
+
+                // Update active class
+                themeOptions.querySelector('.active').classList.remove('active');
                 e.target.classList.add('active');
+
+                // Close the menu
+                themeSwitcher.classList.remove('open');
             }
         });
     }
