@@ -385,3 +385,83 @@ footer {
 .theme-btn[data-theme="soft"] {
     background: linear-gradient(to top, #C0E8F9 0%, #FFF2E2 100%);
 }
+
+[data-theme="sunset"] {
+    --primary: #ff7e5f;
+    --secondary: #feb47b;
+    --accent: #ff7e5f;
+    --background: linear-gradient(to right, #ff7e5f, #feb47b);
+    --text-color: #ffffff;
+    --header-text: #ffffff;
+    --card-bg: rgba(0, 0, 0, 0.2);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="ocean"] {
+    --primary: #00c6ff;
+    --secondary: #0072ff;
+    --accent: #00c6ff;
+    --background: linear-gradient(to right, #00c6ff, #0072ff);
+    --text-color: #ffffff;
+    --header-text: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="mystic"] {
+    --primary: #a18cd1;
+    --secondary: #fbc2eb;
+    --accent: #a18cd1;
+    --background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    --text-color: #ffffff;
+    --header-text: #ffffff;
+    --card-bg: rgba(0, 0, 0, 0.2);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="nature"] {
+    --primary: #a8e063;
+    --secondary: #56ab2f;
+    --accent: #a8e063;
+    --background: linear-gradient(to right, #a8e063, #56ab2f);
+    --text-color: #ffffff;
+    --header-text: #ffffff;
+    --card-bg: rgba(0, 0, 0, 0.2);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="space"] {
+    --primary: #0f2027;
+    --secondary: #203a43;
+    --accent: #2c5364;
+    --background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    --text-color: #ffffff;
+    --header-text: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.2);
+}
+
+.theme-btn[data-theme="sunset"] {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.theme-btn[data-theme="ocean"] {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.theme-btn[data-theme="mystic"] {
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+}
+
+.theme-btn[data-theme="nature"] {
+    background: linear-gradient(to right, #a8e063, #56ab2f);
+}
+
+.theme-btn[data-theme="space"] {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
