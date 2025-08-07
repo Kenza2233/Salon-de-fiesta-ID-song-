@@ -6,6 +6,13 @@
     <title>SDF Id Search</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        // Run immediately to prevent FOUC (Flash of Unstyled Content)
+        (function() {
+            const theme = localStorage.getItem('theme') || 'original';
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
 </head>
 <body>
 

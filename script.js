@@ -166,6 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Optional: do something after typing is done
         });
 
+        // Set active theme button on load
+        const currentTheme = localStorage.getItem('theme') || 'original';
+        themeOptions.querySelector('.active').classList.remove('active');
+        themeOptions.querySelector(`[data-theme="${currentTheme}"]`).classList.add('active');
+
+
         // Tambah Event Listeners
         genreFilter.addEventListener('change', () => filterAndDisplaySongs(activeLetter));
 
@@ -188,7 +194,8 @@ document.addEventListener('DOMContentLoaded', () => {
         themeOptions.addEventListener('click', (e) => {
             if (e.target.classList.contains('theme-btn')) {
                 const theme = e.target.dataset.theme;
-                document.body.dataset.theme = theme;
+                document.documentElement.dataset.theme = theme;
+                localStorage.setItem('theme', theme); // Save theme to localStorage
 
                 // Update active class
                 themeOptions.querySelector('.active').classList.remove('active');
