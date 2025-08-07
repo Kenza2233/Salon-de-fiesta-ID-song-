@@ -9,9 +9,9 @@
     --background: linear-gradient(to top, var(--primary) 0%, var(--secondary) 100%);
     --text-color: #343a40;
     --header-text: #2c3e50;
-    --card-bg: rgba(255, 255, 255, 0.8);
-    --card-border: rgba(255, 255, 255, 0.2);
-    --card-shadow: rgba(31, 38, 135, 0.15);
+    --card-bg: rgba(255, 255, 255, 0.65);
+    --card-border: rgba(255, 255, 255, 0.4);
+    --card-shadow: rgba(31, 38, 135, 0.1);
 }
 
 [data-theme="cute"] {
@@ -21,8 +21,8 @@
     --background: linear-gradient(to top, #FFD6E8 0%, #E6DAF8 100%);
     --text-color: #5d5d5d;
     --header-text: #c75d8e;
-    --card-bg: rgba(253, 253, 253, 0.8);
-    --card-border: rgba(255, 224, 178, 0.5);
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(255, 224, 178, 0.6);
     --card-shadow: rgba(255, 224, 178, 0.2);
 }
 
@@ -33,8 +33,8 @@
     --background: linear-gradient(to top, #C0E8F9 0%, #FFF2E2 100%);
     --text-color: #6c757d;
     --header-text: #0077b6;
-    --card-bg: rgba(250, 250, 250, 0.9);
-    --card-border: rgba(255, 193, 204, 0.5);
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-border: rgba(255, 193, 204, 0.6);
     --card-shadow: rgba(192, 232, 249, 0.25);
 }
 
@@ -183,7 +183,7 @@ select:focus {
 
 .song-card {
     background-color: var(--card-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border: 1px solid var(--card-border);
     border-radius: 15px;
     padding: 20px;
@@ -306,6 +306,11 @@ footer {
     top: 20px;
     right: 20px;
     z-index: 1000;
+    transition: transform 0.4s ease-in-out;
+}
+
+.theme-switcher.hidden-by-scroll {
+    transform: translateY(-150%);
 }
 
 #toggle-theme-btn {

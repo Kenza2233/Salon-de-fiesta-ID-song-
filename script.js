@@ -198,6 +198,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 themeSwitcher.classList.remove('open');
             }
         });
+
+        // Hide/show theme switcher on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Downscroll
+                themeSwitcher.classList.add('hidden-by-scroll');
+                themeSwitcher.classList.remove('open'); // Also close menu on scroll
+            } else {
+                // Upscroll
+                themeSwitcher.classList.remove('hidden-by-scroll');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        }, false);
     }
 
     init();
