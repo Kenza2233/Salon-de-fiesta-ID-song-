@@ -63,6 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             AOS.refresh();
         }, 100);
+
+        // Initialize Tilt effect
+        VanillaTilt.init(document.querySelectorAll(".song-card"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5,
+        });
     }
 
     // 4. FUNGSI UNTUK POPULASI PENAPIS
