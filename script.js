@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             letterFilterContainer.querySelector('.all-letters').classList.add('active');
             activeLetter = 'all';
-            filterAndDisplaySongs(activeLetter);
+            filterAndDisplaySongs();
         });
 
         letterFilterContainer.addEventListener('click', (e) => {
@@ -188,12 +188,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 letterFilterContainer.querySelector('.active').classList.remove('active');
                 e.target.classList.add('active');
                 activeLetter = e.target.dataset.letter;
-                filterAndDisplaySongs(activeLetter);
+                filterAndDisplaySongs();
             }
         });
 
         randomBtn.addEventListener('click', displayRandomSong);
-        searchBox.addEventListener('input', () => filterAndDisplaySongs(activeLetter));
+        searchBox.addEventListener('input', () => filterAndDisplaySongs());
 
         toggleThemeBtn.addEventListener('click', () => {
             themeSwitcher.classList.toggle('open');
