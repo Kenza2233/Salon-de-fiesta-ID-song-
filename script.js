@@ -94,9 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 5. FUNGSI UNTUK MENAPIS DAN MEMAPARKAN
-    function filterAndDisplaySongs(activeLetter = 'all') {
+    function filterAndDisplaySongs() {
         const selectedGenre = genreFilter.value;
         const searchTerm = searchBox.value.toLowerCase();
+        const activeLetterButton = letterFilterContainer.querySelector('.active');
+        const activeLetter = activeLetterButton ? activeLetterButton.dataset.letter : 'all';
 
         const filteredSongs = songs.filter(song => {
             const genreMatch = selectedGenre === 'all' || song.genre === selectedGenre;
@@ -173,27 +175,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         // Tambah Event Listeners
-        genreFilter.addEventListener('change', () => {
-            // Reset letter filter when genre changes
-            if (letterFilterContainer.querySelector('.active')) {
-                letterFilterContainer.querySelector('.active').classList.remove('active');
-            }
-            letterFilterContainer.querySelector('.all-letters').classList.add('active');
-            activeLetter = 'all';
-            filterAndDisplaySongs();
-        });
+        genreFilter.addEventListener('change', filterAndDisplaySongs);
 
         letterFilterContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('letter-button')) {
                 letterFilterContainer.querySelector('.active').classList.remove('active');
                 e.target.classList.add('active');
-                activeLetter = e.target.dataset.letter;
                 filterAndDisplaySongs();
             }
         });
 
         randomBtn.addEventListener('click', displayRandomSong);
-        searchBox.addEventListener('input', () => filterAndDisplaySongs());
+        searchBox.addEventListener('input', filterAndDisplaySongs);
 
         toggleThemeBtn.addEventListener('click', () => {
             themeSwitcher.classList.toggle('open');
