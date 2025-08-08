@@ -179,7 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         letterFilterContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('letter-button')) {
-                letterFilterContainer.querySelector('.active').classList.remove('active');
+                if (letterFilterContainer.querySelector('.active')) {
+                    letterFilterContainer.querySelector('.active').classList.remove('active');
+                }
                 e.target.classList.add('active');
                 filterAndDisplaySongs();
             }
