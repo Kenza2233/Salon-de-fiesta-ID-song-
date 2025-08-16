@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. PEMBOLEHUBAH GLOBAL & RUJUKAN DOM
     let songs = [];
+    let activeLetter = 'all';
 
     const genreFilter = document.getElementById('genre-filter');
     const letterFilterContainer = document.getElementById('letter-filter');
@@ -59,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Refresh AOS untuk mengesan elemen baru
-        // Kelewatan kecil diperlukan untuk AOS mengesan elemen baru selepas grid dikemas kini
         setTimeout(() => {
             AOS.refresh();
         }, 100);
@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
             genreFilter.appendChild(option);
         });
 
-        // Cipta butang huruf
         const allButton = document.createElement('button');
         allButton.className = 'letter-button all-letters active';
         allButton.textContent = 'All';
@@ -97,8 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterAndDisplaySongs() {
         const selectedGenre = genreFilter.value;
         const searchTerm = searchBox.value.toLowerCase();
-        const activeLetterButton = letterFilterContainer.querySelector('.active');
-        const activeLetter = activeLetterButton ? activeLetterButton.dataset.letter : 'all';
 
         const filteredSongs = songs.filter(song => {
             const genreMatch = selectedGenre === 'all' || song.genre === selectedGenre;
@@ -124,24 +121,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayRandomSong() {
-        // Reset all filters to default
         genreFilter.value = 'all';
         searchBox.value = '';
         if (letterFilterContainer.querySelector('.active')) {
             letterFilterContainer.querySelector('.active').classList.remove('active');
         }
-        letterFilterContainer.querySelector('.all-letters').classList.add('active');
+        const allLettersBtn = letterFilterContainer.querySelector('.all-letters');
+        if (allLettersBtn) {
+            allLettersBtn.classList.add('active');
+        }
+        activeLetter = 'all';
 
-        // Select and display 1 to 4 random songs
         const shuffled = [...songs].sort(() => 0.5 - Math.random());
-        const count = Math.floor(Math.random() * 4) + 1; // Random number between 1 and 4
+        const count = Math.floor(Math.random() * 4) + 1;
         const randomSongs = shuffled.slice(0, count);
         displaySongs(randomSongs);
     }
 
     // 6. INISIALISASI APLIKASI
     async function init() {
-        // Ambil data lagu dari fail JSON
         try {
             const response = await fetch('songs.json');
             if (!response.ok) {
@@ -155,27 +153,19 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        let activeLetter = 'all';
-
-        // Sediakan penapis
         populateFilters(songs);
-
-        // Paparkan semua lagu pada mulanya
         displaySongs(songs);
 
-        // Mulakan animasi menaip
-        typeWriter("SDF Id Search", 0, function() {
-            // Optional: do something after typing is done
-        });
+        typeWriter("SDF Id Search", 0, function() {});
 
-        // Set active theme button on load
         const currentTheme = localStorage.getItem('theme') || 'original';
         themeOptions.querySelector('.active').classList.remove('active');
         themeOptions.querySelector(`[data-theme="${currentTheme}"]`).classList.add('active');
 
-
-        // Tambah Event Listeners
+        // EVENT LISTENERS
         genreFilter.addEventListener('change', filterAndDisplaySongs);
+        searchBox.addEventListener('input', filterAndDisplaySongs);
+        randomBtn.addEventListener('click', displayRandomSong);
 
         letterFilterContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('letter-button')) {
@@ -183,12 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     letterFilterContainer.querySelector('.active').classList.remove('active');
                 }
                 e.target.classList.add('active');
+                activeLetter = e.target.dataset.letter;
                 filterAndDisplaySongs();
             }
         });
-
-        randomBtn.addEventListener('click', displayRandomSong);
-        searchBox.addEventListener('input', filterAndDisplaySongs);
 
         toggleThemeBtn.addEventListener('click', () => {
             themeSwitcher.classList.toggle('open');
@@ -198,30 +186,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target.classList.contains('theme-btn')) {
                 const theme = e.target.dataset.theme;
                 document.documentElement.dataset.theme = theme;
-                localStorage.setItem('theme', theme); // Save theme to localStorage
+                localStorage.setItem('theme', theme);
 
-                // Update active class
                 themeOptions.querySelector('.active').classList.remove('active');
                 e.target.classList.add('active');
 
-                // Close the menu
                 themeSwitcher.classList.remove('open');
             }
         });
 
-        // Hide/show theme switcher on scroll
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > lastScrollTop) {
-                // Downscroll
                 themeSwitcher.classList.add('hidden-by-scroll');
-                themeSwitcher.classList.remove('open'); // Also close menu on scroll
+                themeSwitcher.classList.remove('open');
             } else {
-                // Upscroll
                 themeSwitcher.classList.remove('hidden-by-scroll');
             }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }, false);
     }
 
